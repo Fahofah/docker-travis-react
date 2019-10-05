@@ -3,8 +3,8 @@ language: generic
 services:
   - docker
 
- before_install:
+before_install:
   - docker build -t testImage -f Dockerfile.dev .
 
- script:
+script:
   - docker run -e CI=true testImage npm run test
